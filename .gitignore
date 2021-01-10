@@ -1,0 +1,16 @@
+*.class
+build/
+*/build/
+.idea/
+*.idea/
+.classpath
+*.classpath
+.project
+*.project
+.settings/
+*.settings/
+gradle/
+*/gradle/
+.gradle/
+gradlew
+gradlew.bat

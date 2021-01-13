@@ -3,20 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     java
     idea
-    application
     kotlin("jvm") version "1.4.21"
-}
-
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-}
-
-dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("script-runtime"))
 }
 
 object Properties {
@@ -29,6 +16,11 @@ object Properties {
 allprojects {
     group = "com.example"
     version = "1.0.0"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 
     tasks.withType<JavaCompile> {
         sourceCompatibility = Properties.jvmVersion

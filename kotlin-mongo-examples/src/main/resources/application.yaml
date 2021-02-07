@@ -1,0 +1,8 @@
+database:
+  mongo:
+    uri: mongodb://kotlin_mongo:kotlin_mongo@localhost:27017/kotlin_mongo
+    database: kotlin_mongo
+    collection:
+      naming:
+        case: UNDERSCORE
+        ignored_suffix: Entity

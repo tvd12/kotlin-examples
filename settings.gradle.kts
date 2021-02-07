@@ -3,6 +3,7 @@ rootProject.name = "kotlin-examples"
 include("core")
 include("bean")
 include("data-binding")
+include("mongo")
 include("properties-file")
 include("rpc")
 include("rxjava")

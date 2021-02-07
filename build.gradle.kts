@@ -7,8 +7,9 @@ plugins {
 }
 
 object Properties {
-    const val jvmVersion = "1.8"
+    const val jacksonVersion="2.12.0"
     const val jupiterVersion = "5.7.0"
+    const val jvmVersion = "1.8"
     const val hamcrestVersion="2.2"
     const val mockkVersion="1.10.3"
 }
@@ -48,6 +49,8 @@ subprojects {
     }
 
     dependencies {
+        implementation("com.fasterxml.jackson.core:jackson-databind:${Properties.jacksonVersion}")
+
         testImplementation("io.mockk:mockk:${Properties.mockkVersion}")
         testImplementation("org.junit.jupiter:junit-jupiter-api:${Properties.jupiterVersion}")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")

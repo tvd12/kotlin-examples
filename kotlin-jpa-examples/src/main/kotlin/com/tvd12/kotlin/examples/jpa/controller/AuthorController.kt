@@ -10,14 +10,12 @@ import com.tvd12.kotlin.examples.jpa.request.AddAuthorRequest
 
 @Controller("/api/v1/author")
 class AuthorController(
-    private val authorRepository: AuthorRepository,
-    private val maxIdRepository: EzyMaxIdRepository
+    private val authorRepository: AuthorRepository
 ) {
 
     @DoPost("/add")
     fun addAuthor(@RequestBody request: AddAuthorRequest): Author {
         val author = Author(
-            id = maxIdRepository.incrementAndGet("author"),
             name = request.authorName
         )
         authorRepository.save(author)

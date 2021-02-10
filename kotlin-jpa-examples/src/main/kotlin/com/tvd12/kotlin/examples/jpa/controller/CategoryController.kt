@@ -12,8 +12,7 @@ import java.lang.IllegalArgumentException
 
 @Controller("/api/v1/category")
 class CategoryController(
-    private val categoryRepository: CategoryRepository,
-    private val maxIdRepository: EzyMaxIdRepository
+    private val categoryRepository: CategoryRepository
 ) {
 
     @DoPost("/add")
@@ -23,7 +22,6 @@ class CategoryController(
             throw HttpBadRequestException("category named: ${request.categoryName} existed")
         }
         val category = Category(
-            id = maxIdRepository.incrementAndGet("category"),
             name = request.categoryName
         )
         categoryRepository.save(category)

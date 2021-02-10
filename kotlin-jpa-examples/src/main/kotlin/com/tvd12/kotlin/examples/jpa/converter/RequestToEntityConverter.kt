@@ -10,9 +10,8 @@ import java.time.ZoneOffset
 import java.time.ZonedDateTime
 import java.util.*
 
-fun AddBookRequest.toBookEntity(bookId: Long) =
+fun AddBookRequest.toBookEntity() =
     Book(
-        id = bookId,
         categoryId = categoryId,
         authorId = authorId,
         name = bookName,

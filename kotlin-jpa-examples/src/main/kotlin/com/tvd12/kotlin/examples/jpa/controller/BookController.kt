@@ -20,8 +20,7 @@ import java.math.BigDecimal
 class BookController(
     private val authorRepository: AuthorRepository,
     private val bookRepository: BookRepository,
-    private val categoryRepository: CategoryRepository,
-    private val maxIdRepository: EzyMaxIdRepository
+    private val categoryRepository: CategoryRepository
 ) {
 
     @DoPost("/book/add")
@@ -45,8 +44,7 @@ class BookController(
                 "category: ${request.categoryId} not found"
             )
 
-        val bookId = maxIdRepository.incrementAndGet("book")
-        val book = request.toBookEntity(bookId)
+        val book = request.toBookEntity()
         bookRepository.save(book)
         return book.toBookResponse(author, category)
     }

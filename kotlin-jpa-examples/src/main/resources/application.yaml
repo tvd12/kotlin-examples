@@ -1,3 +1,5 @@
+server:
+  port: 8080
 datasource:
   jdbcUrl: jdbc:mysql://root:123@localhost:3306/test
   driverClassName: com.mysql.cj.jdbc.Driver

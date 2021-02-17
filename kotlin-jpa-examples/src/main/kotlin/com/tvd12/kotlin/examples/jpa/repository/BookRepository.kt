@@ -12,15 +12,15 @@ interface BookRepository: EzyDatabaseRepository<Long, Book> {
 
     fun findByNameAndAuthorId(name: String, authorId: Long): Book?
 
-    @EzyQuery("{\$orderby:{name:1}}")
+    @EzyQuery("select e from Book e")
     fun findBooks(next: Next): List<Book>
 
-    @EzyQuery("{\$query:{name:{\$lt:?0}}, \$orderby:{name:1}}")
+    @EzyQuery("select e from Book e where e.name < ?0 order by e.name")
     fun findByNameLt(name: String, next: Next): List<Book>
 
-    @EzyQuery("{\$query:{name:{\$gt:?0}}, \$orderby:{name:1}}")
+    @EzyQuery("select e from Book e where e.name > ?0 order by e.name")
     fun findByNameGt(name: String, next: Next): List<Book>
 
-    @EzyQuery("[{ \$group: { _id : 'sum', sum : { \$sum: {\$toDecimal: \'\$price'}} } }]")
+    @EzyQuery("select sum(e.price) as sum from Book e", nativeQuery = true)
     fun sumPrice(): SumBookPriceResult
 }

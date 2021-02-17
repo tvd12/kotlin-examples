@@ -11,6 +11,4 @@ data class Category(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0L,
     var name: String
-) {
-    constructor() : this(0L, "")
-}
+)

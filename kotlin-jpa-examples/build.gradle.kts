@@ -2,6 +2,14 @@ val ezyDataVersion: String by project
 val ezyfoxVersion: String by project
 val ezyHttpVersion: String by project
 
+plugins {
+    id("org.jetbrains.kotlin.plugin.jpa") version "1.4.21"
+}
+
+apply {
+    plugin("kotlin-jpa")
+}
+
 dependencies {
     implementation(project(":core"))
 

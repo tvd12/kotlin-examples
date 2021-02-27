@@ -6,6 +6,7 @@ include("data-binding")
 include("jpa")
 include("mongo")
 include("properties-file")
+include("redis")
 include("rpc")
 include("rxjava")
 

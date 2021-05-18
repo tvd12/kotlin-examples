@@ -12,6 +12,7 @@ object Properties {
     const val jvmVersion = "1.8"
     const val hamcrestVersion="2.2"
     const val mockkVersion="1.10.3"
+    const val kotlinCoroutinesVersion="1.3.9"
 }
 
 allprojects {
@@ -50,6 +51,7 @@ subprojects {
 
     dependencies {
         implementation("com.fasterxml.jackson.core:jackson-databind:${Properties.jacksonVersion}")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Properties.kotlinCoroutinesVersion}")
 
         testImplementation("io.mockk:mockk:${Properties.mockkVersion}")
         testImplementation("org.junit.jupiter:junit-jupiter-api:${Properties.jupiterVersion}")

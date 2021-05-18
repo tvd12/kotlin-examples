@@ -1,6 +1,7 @@
 rootProject.name = "kotlin-examples"
 
 include("core")
+include("coroutines")
 include("bean")
 include("data-binding")
 include("jpa")
